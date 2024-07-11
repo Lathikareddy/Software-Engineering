@@ -1,17 +1,19 @@
+# Terraform Udemy Course
+
 - https://gitlab.com/terraform-basico-ao-avancado
 - https://www.udemy.com/course/terraform-do-basico-ao-avancado
 
-# CRIAR AWS KEY
+## Create AWS KEY
 ```
 ssh-keygen -f aws-key
 ```
 
-# Conectar a VM
+## Connect to VM
 ```
 ssh -i aws-key ubuntu@52.91.104.81
 ```
 
-## Comandos
+## Commands
 ```
 terraform providers
 ```
