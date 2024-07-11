@@ -18,7 +18,7 @@
 - Esse repositório também me motivou a criar [meu site pessoal](https://alexgalhardo.com) no final de 2023, para fazer algo mais organizado e para alcançar mais pessoas, principalmente para melhorar meus estudos em inglês também, além de servir como portfólio e compartilhar projetos paralelos que venho fazendo no meu tempo livre para fins didáticos.
 - Em julho de 2024 fiz uma grande refatoração nesse repositório com mais informação, conteúdo e melhor organização dos arquivos.
 - Eu gostaria de ter tido uma referência assim com centenas de outras referências úteis de estudo quando comecei a estudar programação e tecnologia la em 2016.
-- Uma boa parte desse repositório esta em português, e o restante em inglês. Dizer que aprender inglês em pleno século XXI é clichê né.
+- Uma boa parte desse repositório esta em português, e o restante em inglês. Dizer que aprender inglês em pleno século XXI é extremamente importante e essencial é clichê né.
 - Eu gosto bastante de compartilhar conhecimento e fazer essas anotações de estudos, seja para fins pessoais e profissionais, espero que elas sejam úteis para vocês também.
 
 ## References
