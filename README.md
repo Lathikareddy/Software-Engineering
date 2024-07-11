@@ -8,7 +8,7 @@
 - Over time, many people started to give stars and fork this repository, especially Brazilians who are starting their studies in the area.
 - This repository also motivated me to create [my personal website](https://alexgalhardo.com) at the end of 2023, to do something more organized and to reach more people, mainly to improve my English studies as well, in addition to serving as a portfolio and sharing side projects that I have been doing in my free time for educational purposes.
 - In July 2024, I did a major refactoring of this repository with more information, content and better organization of the files.
-- I would have liked to have a reference like this with hundreds of other useful study references when I started studying programming and technology back in 2016.
+- I wish I had a reference like this with hundreds of other useful study references when I started studying programming and technology back in 2016.
 - I really enjoy sharing knowledge and making these study notes, whether for personal or professional purposes, I hope they are useful for you too.
 
 
@@ -17,7 +17,7 @@
 - Com o passar do tempo, muitas pessoas começaram a dar estrelinhas e fazer o fork desse repositório, principalmente brasileiros que estão começando os estudos na área. 
 - Esse repositório também me motivou a criar [meu site pessoal](https://alexgalhardo.com) no final de 2023, para fazer algo mais organizado e para alcançar mais pessoas, principalmente para melhorar meus estudos em inglês também, além de servir como portfólio e compartilhar projetos paralelos que venho fazendo no meu tempo livre para fins didáticos.
 - Em julho de 2024 fiz uma grande refatoração nesse repositório com mais informação, conteúdo e melhor organização dos arquivos.
-- Eu gostaria de ter uma referência assim com centenas de outras referências úteis de estudo quando comecei a estudar programação e tecnologia la em 2016.
+- Eu gostaria de ter tido uma referência assim com centenas de outras referências úteis de estudo quando comecei a estudar programação e tecnologia la em 2016.
 - Uma boa parte desse repositório esta em português, e o restante em inglês. Dizer que aprender inglês em pleno século XXI é clichê né.
 - Eu gosto bastante de compartilhar conhecimento e fazer essas anotações de estudos, seja para fins pessoais e profissionais, espero que elas sejam úteis para vocês também.
 
