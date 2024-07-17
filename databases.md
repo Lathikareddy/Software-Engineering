@@ -1,15 +1,4 @@
----
-author: Alex Galhardo
-pubDatetime: 2024-01-01T15:22:00Z
-modDatetime: 2024-01-01T09:12:47.400Z
-title: DataBases
-slug: databases
-featured: false
-draft: false
-tags:
-  - tags
-description: desc
----
+# Databases
 
 <img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/types-of-databases.png">
 
