@@ -47,15 +47,15 @@
   - [How Browsers Work: Behind the scenes of modern web browsers](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
   - [Teach Yourself Programming in Ten Years - Peter Norvig](http://norvig.com/21-days.html)
   - [No Silver Bullet - Essence and Accident in Software Engineering](https://alexgalhardo.vercel.app/pdfs/no-silver-bullet.pdf)
+  - [The Future of the Web is on the Edge](https://deno.com/blog/the-future-of-web-is-on-the-edge)
 - Github
   - [Coding Interview University](https://github.com/jwasham/coding-interview-university)
   - [Web Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
-- Mathematics
-  - [https://www.khanacademy.org/](https://www.khanacademy.org/)
 - Sites
   - [FreeCodeCamp](https://www.freecodecamp.org/)
   - [ByteByteGO](https://blog.bytebytego.com/)
   - [Roadmap.sh](https://roadmap.sh/)
+  - [RFC Editor](https://www.rfc-editor.org/)
   - [https://developer.mozilla.org/en-US/](https://developer.mozilla.org/en-US/)
   - [The Odin Project](https://www.theodinproject.com/)
   - [GuiaFoca Linux](https://guiafoca.org/)
