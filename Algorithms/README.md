@@ -370,13 +370,13 @@ Python usually manages memory for you, but you can get memory leaks by keeping u
 
 ```python
 class Block:
-def __init__(self):
-self.data = [0] * 1000000 # too much data, too much memory!
+  def __init__(self):
+  self.data = [0] * 1000000 # too much data, too much memory!
 
 def create_blocks():
-blocks = []
-while True: # infinite loop!
-blocks.append(Block()) # we keep creating blocks and never freeing them
+  blocks = []
+  while True: # infinite loop!  
+  blocks.append(Block()) # we keep creating blocks and never freeing them
 
 create_blocks()
 ```
