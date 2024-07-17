@@ -375,7 +375,7 @@ class Block:
 
 def create_blocks():
   blocks = []
-  while True: # infinite loop!  
+  while True: # infinite loop!
   blocks.append(Block()) # we keep creating blocks and never freeing them
 
 create_blocks()
@@ -418,10 +418,10 @@ typedef struct {
 
 void create_blocks() {
   while (1) { // infinite loop!
-  Block *block = (Block *)malloc(sizeof(Block));
-  block->data = (int *)malloc(1000000 * sizeof(int)); // lots of memory allocated
-  // we never free the memory allocated with free()
-}
+    Block *block = (Block *)malloc(sizeof(Block));
+    block->data = (int *)malloc(1000000 * sizeof(int)); // lots of memory allocated
+    // we never free the memory allocated with free()
+  }
 }
 
 int main() {
@@ -640,6 +640,93 @@ In this example, originalValue is changed because the changeValue function recei
 ## **Binary Tress**
 
 <img alt="img" src="https://alexgalhardo.vercel.app/images/binary-trees.png" width="100%">
+
+## Breadth-First Search (BFS) and Depth-First Search (DFS)
+
+Imagine you are playing an exploration game in a maze. You want to find your way to the treasure. There are two main ways to explore the maze: BFS and DFS.
+
+#### BFS (Breadth-First Search)
+Think of BFS as if you are exploring the maze layer by layer. First, you look at all the rooms around the room you are in. Then, you go to the next rooms in each direction and do the same thing, and so on. You are expanding your search broadly, layer by layer.
+
+#### DFS (Depth-First Search)
+Think of DFS as if you are exploring the maze by going as deep as you can in one path before going back and trying another. You choose a direction and keep going until you can't go any further, then you go back and choose another direction, and so on. You are exploring one path deeply before trying another.
+
+### Examples in TypeScript
+
+Let's see how to implement BFS and DFS in TypeScript to explore a maze represented by a graph.
+
+#### BFS in TypeScript 
+```typescript 
+function bfs(graph: { [key: string]: string[] }, start: string): string[] { 
+  let visited: Set<string> = new Set();
+  let queue: string[] = [start];
+  let result: string[] = [];
+
+  while (queue.length > 0) { 
+    let node = queue.shift()!;
+    if (!visited.has(node)) { 
+      visited.add(node);
+      result.push(node);
+      queue.push(...graph[node]);
+    } 
+  } 
+  return result;
+} 
+
+// Usage example 
+const graphBFS = { 
+  A: ["B", "C"], 
+  B: ["D", "E"], 
+  C: ["F"], 
+  D: [], 
+  E: ["F"], 
+  F: [] 
+};
+
+console.log(bfs(graphBFS, "A")); 
+// Output: ["A", "B", "C", "D", "E", "F"] 
+``` 
+
+#### DFS in TypeScript 
+
+```typescript 
+function dfs(graph: { [key: string]: string[] }, start: string): string[] { 
+  let visited: Set<string> = new Set();
+  let stack: string[] = [start];
+  let result: string[] = [];
+
+  while (stack.length > 0) { 
+    let node = stack.pop()!;
+    if (!visited.has(node)) { 
+      visited.add(node);
+      result.push(node);
+      stack.push(...graph[node]);
+    } 
+  } 
+  
+  return result;
+}
+
+// Usage example
+const graphDFS = {
+  A: ["B", "C"],
+  B: ["D", "E"],
+  C: ["F"],
+  D: [],
+  E: ["F"],
+  F: []
+};
+
+console.log(dfs(graphDFS, "A")); // Output: ["A", "C", "F", "B", "E", "D"]
+```
+
+### Summary
+- **BFS (Breadth-First Search):** Explores the maze layer by layer, checking all the surrounding rooms before going deeper.
+- **DFS (Depth-First Search):** Explores the maze going as deep as possible in one path before going back and trying another.
+
+In the example:
+- **BFS:** Starts at "A", then goes to "B" and "C", and continues exploring layer by layer. 
+- **DFS:** Start at "A", go to "B", then "D", and continue exploring as deep as possible on each path before returning.
 
 ## **Big O Notation**
 
