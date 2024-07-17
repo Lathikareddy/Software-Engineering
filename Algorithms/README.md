@@ -243,6 +243,8 @@ task1();
 task2();
 ```
 
+<img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/what-is-a-deadlock.png">
+
 ### Race Condition
 
 A race condition occurs when the outcome of the software depends on the sequence or timing of uncontrolled events. This usually occurs when two or more threads or processes access and modify a shared resource at the same time.
@@ -353,6 +355,218 @@ So, processes and threads help you do more things at the same time in your progr
 <img alt="img" src="https://alexgalhardo.vercel.app/images/program-process-threads.png" width="100%">
 
 <img alt="img" src="https://alexgalhardo.vercel.app/images/process-vs-thread.png" width="100%">
+
+## Memory Leaks
+
+Imagine you're playing a block game, where you build things with toy blocks. Each time you pick up a block, you have to return it to the box when you're done using it. A **memory leak** is like you pick up blocks from the box, but never return them. Over time, the box becomes empty and you're left with no blocks to play with, even though there are still plenty of blocks scattered around the floor.
+
+In programming, a **memory leak** happens when a program reserves memory to use (like picking up blocks from the box), but doesn't release that memory when it's done (like not returning the blocks). This causes the computer's available memory to gradually decrease, which can cause the program or even the computer to crash.
+
+### Examples in Different Languages
+
+#### Python
+
+Python usually manages memory for you, but you can get memory leaks by keeping unnecessary references to objects.
+
+```python
+class Block:
+def __init__(self):
+self.data = [0] * 1000000 # too much data, too much memory!
+
+def create_blocks():
+blocks = []
+while True: # infinite loop!
+blocks.append(Block()) # we keep creating blocks and never freeing them
+
+create_blocks()
+```
+
+#### TypeScript
+
+In TypeScript, a memory leak can happen when you create objects and never remove references to them.
+
+```typescript
+class Block {
+  data: number[];
+
+  constructor() {
+    this.data = new Array(1000000).fill(0); // too much data, too much memory!
+  }
+}
+
+const blocks: Block[] = [];
+
+function createBlocks() {
+  setInterval(() => {
+    blocks.push(new Block()); // we keep creating blocks and never free them
+  }, 1000);
+}
+
+createBlocks();
+```
+
+#### C
+
+In C, you have to manually manage memory allocation and freeing.
+
+```c
+#include <stdlib.h>
+
+typedef struct {
+  int *data;
+} Block;
+
+void create_blocks() {
+  while (1) { // infinite loop!
+  Block *block = (Block *)malloc(sizeof(Block));
+  block->data = (int *)malloc(1000000 * sizeof(int)); // lots of memory allocated
+  // we never free the memory allocated with free()
+}
+}
+
+int main() {
+  create_blocks();
+  return 0;
+}
+```
+
+#### Rust
+
+Rust helps prevent memory leaks with its memory management system, but they can still happen in certain cases.
+
+```rust
+struct Block {
+  data: Vec<i32>,
+}
+
+fn create_blocks() {
+  let mut blocks = Vec::new();
+  loop {
+    let block = Block { data: vec![0; 1_000_000] }; // lots of memory allocated
+    blocks.push(block); // we keep creating blocks and never freeing them
+  }
+}
+
+fn main() {
+  create_blocks();
+}
+```
+
+### In short
+
+A **memory leak** is like taking toy blocks and never putting them back in the box. In programming, it is reserving memory and never freeing it. This can leave the computer with no available memory, causing programs and the computer itself to crash.
+
+## What are Pointers?
+
+Imagine that you have a treasure hidden on a map. The **pointer** is like an "arrow" that points to the location of the treasure on the map. In programming, a pointer is something that points to a place in the computer's memory where a value is stored.
+
+## Passing by Value vs. Passing by Reference
+
+#### Passing by Value
+
+Imagine that you have a toy and you lend it to a friend. Instead of giving the actual toy, you give an exact copy of the toy. Now, if your friend breaks the toy, your actual toy is still safe.
+
+In programming, **passing by value** means giving a copy of the data to a function. If the function modifies the copy, the original data remains unchanged.
+
+#### Passing by Reference
+
+Now, imagine that you lend your actual toy to your friend. If he breaks the toy, your actual toy will be broken.
+
+In programming, **passing by reference** means giving the location (or address) of the data to a function. If the function modifies the data, the original data is changed.
+
+### Examples in TypeScript and C
+
+#### TypeScript
+
+##### Passing by Value
+
+In TypeScript, primitive types (like numbers) are passed by value.
+
+```typescript
+function changeValue(x: number): void {
+  x = 10;
+  console.log("Inside function:", x);
+}
+
+let originalValue = 5;
+console.log("Before function:", originalValue);
+changeValue(originalValue);
+console.log("After function:", originalValue);
+```
+
+In this example, originalValue is not changed because a copy of originalValue is passed to the changeValue function.
+
+##### Passing by Reference
+
+In TypeScript, objects are passed by reference.
+
+```typescript
+function changeObject(obj: { value: number }): void {
+  obj.value = 10;
+  console.log("Inside function:", obj.value);
+}
+
+let originalObject = { value: 5 };
+console.log("Before function:", originalObject.value);
+changeObject(originalObject);
+console.log("After function:", originalObject.value);
+```
+
+In this example, originalObject is changed because the changeObject function receives the object reference and directly modifies the value.
+
+#### C
+
+##### Passing by Value
+
+In C, primitive types (such as integers) are passed by value.
+
+```c
+#include <stdio.h>
+
+void changeValue(int x) {
+  x = 10;
+  printf("Inside function: %d\n", x);
+}
+
+int main() {
+  int originalValue = 5;
+  printf("Before function: %d\n", originalValue);
+  changeValue(originalValue);
+  printf("After function: %d\n", originalValue);
+  return 0;
+}
+```
+
+In this example, originalValue is not changed because a copy of originalValue is passed to the changeValue function.
+
+##### Passing by Reference
+
+In C, you can pass the reference (address) of a variable using pointers.
+
+```c
+#include <stdio.h>
+
+void changeValue(int *x) {
+  *x = 10;
+  printf("Inside function: %d\n", *x);
+}
+
+int main() {
+  int originalValue = 5;
+  printf("Before function: %d\n", originalValue);
+  changeValue(&originalValue);
+  printf("After function: %d\n", originalValue);
+  return 0;
+}
+```
+
+In this example, originalValue is changed because the changeValue function receives a pointer to originalValue and directly modifies the value using the pointer.
+
+### Summary
+
+- **Pointers** are like arrows that point to places in memory where data is stored.
+- **Passing by Value** means giving a copy of the data to a function.
+- **Passing by Reference** means giving the location of the data to a function, allowing the function to modify the original data.
 
 ## **Stack vs Queue**
 
