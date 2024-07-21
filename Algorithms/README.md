@@ -60,6 +60,137 @@
 - [VisualGo](https://visualgo.net/en)
 - [University of San Francisco - Data Structures Visualization](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
 
+## Programming Paradigms
+
+### 1. Procedural Paradigm
+
+- **Definition:** Focuses on procedures or routines (functions) to operate on data.
+- **Main Feature:** Code organized into functions that execute a sequence of instructions.
+
+**Example in C:**
+
+```c
+#include <stdio.h>
+
+void sayHello() {
+  printf("Hello, World!\n");
+}
+
+int main() {
+  sayHello();
+  return 0;
+}
+```
+
+### 2. Imperative Paradigm
+
+- **Definition:** Describes computation as a series of instructions that change the state of the program.
+- **Main Feature:** Emphasizes how to perform tasks (step by step).
+
+**JavaScript Example:**
+
+```javascript
+let total = 0;
+for (let i = 1; i <= 10; i++) {
+  total += i;
+}
+console.log(total); // 55
+```
+
+### 3. Functional Paradigm
+
+- **Definition:** It is based on the evaluation of mathematical functions and avoids the use of mutable states.
+- **Main Feature:** Pure functions and immutability.
+
+**Elixir Example:**
+
+```elixir
+defmodule Math do
+  def sum(a, b) do
+    a + b
+  end
+end
+
+IO.puts Math.sum(1, 2) # 3
+```
+
+### 4. Object-Oriented Paradigm (OOP)
+
+- **Definition:** It is based on objects that contain data and methods to operate on that data.
+- **Main Feature:** Encapsulation, inheritance, polymorphism.
+
+**Example in Python:**
+
+```python
+class Animal:
+  def __init__(self, name):
+    self.name = name
+
+def speak(self):
+  pass
+
+class Dog(Animal):
+  def speak(self):
+    return f"{self.name} says Woof!"
+
+dog = Dog("Buddy")
+print(dog.speak()) # Buddy says Woof!
+```
+
+### 5. Declarative Paradigm
+
+- **Definition:** Describes what the program should do, not how to do it.
+- **Main Feature:** Specifies the desired result without detailing the steps.
+
+**Example in SQL:**
+
+```sql
+SELECT * FROM products WHERE price > 100;
+```
+
+### 6. Logical Paradigm
+
+- **Definition:** Relies on rules and logic to derive conclusions from facts.
+- **Main Feature:** Uses formal logic to express relationships.
+
+**Example in Prolog:**
+
+```prolog
+parent(john, mary).
+parent(mary, susan).
+grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
+```
+
+### 7. Structured Paradigm
+
+- **Definition:** Emphasizes dividing the program into modules or blocks.
+- **Main Feature:** Uses control structures such as loops and conditionals.
+
+**Example in TypeScript:**
+
+```typescript
+function factorial(n: number): number {
+  if (n <= 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // 120
+```
+
+### Summary:
+
+- **Procedural:** Functions and procedures (**C**).
+- **Imperative:** Step-by-step (**JavaScript**).
+- **Functional:** Pure functions, without mutable states (**Elixir**).
+- **Object-oriented (OOP):** Objects and methods (**Python**).
+- **Declarative:** Focus on what to do, not how (**SQL**).
+- **Logical:** Rules and formal logic (**Prolog**).
+- **Structured:** Blocking and flow control (**TypeScript**).
+
+These paradigms help to structure and organize code in different ways, each with its benefits and best applications.
+
 ## **P vs NP Problems**
 
 - Imagine you have a super hard puzzle to solve. Now, you want to know if there is a quick way to solve this puzzle, like some magic or special formula that solves it instantly. That would be awesome, right?
@@ -74,6 +205,74 @@
 </video>
 
 Source: [https://www.youtube.com/watch?v=pQsdygaYcE4](https://www.youtube.com/watch?v=pQsdygaYcE4)
+
+## **Stack vs Heap**
+
+Let's imagine that your computer's memory is like a bookshelf with several shelves. When you need to store something, you can put it on one of these shelves in two different ways: **stack** and **heap**.
+
+### Stack
+
+1. **Organization:** The stack is like a stack of plates, where you put one plate on top of another. The last plate to be put on is the first to be removed.
+
+2. **Speed:** The stack is very fast because the plates (data) are accessed in a specific order (LIFO - Last In, First Out).
+
+3. **Fixed Size:** The stack has a fixed size. This means that you can only stack a limited number of plates before the stack becomes full.
+
+4. **Automatic Management:** When you put a plate (variable) on the stack, it is automatically removed when it is no longer needed.
+
+### Heap
+
+1. **Organization:** The heap is like a big pile of toys lying around. You can pick up and put toys anywhere.
+
+2. **Speed:** The heap is slower than the stack because you may need to search for free space to put a new toy (data).
+
+3. **Variable Size:** The heap can grow and shrink as needed, so you can add lots of toys (data) without worrying too much about space.
+
+4. **Manual Management:** When you put a toy in the heap, you need to remember to take it out when you're done using it. If you forget, memory can get messed up (memory leaks).
+
+### Example in C
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function using the stack
+void stackExample() {
+  int stackVar = 10; // The variable is stored in the stack
+  printf("Variable value in the stack: %d\n", stackVar);
+}
+
+// Function using the heap
+void heapExample() {
+  int *heapVar = (int *)malloc(sizeof(int)); // The variable is stored in the heap
+  if (heapVar != NULL) {
+    *heapVar = 20;
+    printf("Variable value in the heap: %d\n", *heapVar);
+    free(heapVar); // Remember to free the memory!
+  }
+}
+
+int main() {
+  stackExample();
+  heapExample();
+  return 0;
+}
+```
+
+### Code Explanation
+
+1. **Stack Example:**
+
+- **int stackVar = 10;** places the variable **stackVar** on the stack.
+- When **stackExample()** finishes, **stackVar** is automatically removed from memory.
+
+2. **Heap Example:**
+
+- <b>int _heapVar = (int _)malloc(sizeof(int));</b> places the variable **heapVar** on the heap.
+- **\*heapVar = 20;** assigns the value 20 to the allocated space in the heap.
+- **free(heapVar);** frees the heap memory to prevent leaks.
+
+<img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/stack-heap.png">
 
 ## **Dinamic Programming**
 
@@ -418,10 +617,10 @@ typedef struct {
 
 void create_blocks() {
   while (1) { // infinite loop!
-    Block *block = (Block *)malloc(sizeof(Block));
-    block->data = (int *)malloc(1000000 * sizeof(int)); // lots of memory allocated
-    // we never free the memory allocated with free()
-  }
+  Block *block = (Block *)malloc(sizeof(Block));
+  block->data = (int *)malloc(1000000 * sizeof(int)); // lots of memory allocated
+  // we never free the memory allocated with free()
+}
 }
 
 int main() {
@@ -646,64 +845,67 @@ In this example, originalValue is changed because the changeValue function recei
 Imagine you are playing an exploration game in a maze. You want to find your way to the treasure. There are two main ways to explore the maze: BFS and DFS.
 
 #### BFS (Breadth-First Search)
+
 Think of BFS as if you are exploring the maze layer by layer. First, you look at all the rooms around the room you are in. Then, you go to the next rooms in each direction and do the same thing, and so on. You are expanding your search broadly, layer by layer.
 
 #### DFS (Depth-First Search)
+
 Think of DFS as if you are exploring the maze by going as deep as you can in one path before going back and trying another. You choose a direction and keep going until you can't go any further, then you go back and choose another direction, and so on. You are exploring one path deeply before trying another.
 
 ### Examples in TypeScript
 
 Let's see how to implement BFS and DFS in TypeScript to explore a maze represented by a graph.
 
-#### BFS in TypeScript 
-```typescript 
-function bfs(graph: { [key: string]: string[] }, start: string): string[] { 
+#### BFS in TypeScript
+
+```typescript
+function bfs(graph: { [key: string]: string[] }, start: string): string[] {
   let visited: Set<string> = new Set();
   let queue: string[] = [start];
   let result: string[] = [];
 
-  while (queue.length > 0) { 
+  while (queue.length > 0) {
     let node = queue.shift()!;
-    if (!visited.has(node)) { 
+    if (!visited.has(node)) {
       visited.add(node);
       result.push(node);
       queue.push(...graph[node]);
-    } 
-  } 
+    }
+  }
   return result;
-} 
+}
 
-// Usage example 
-const graphBFS = { 
-  A: ["B", "C"], 
-  B: ["D", "E"], 
-  C: ["F"], 
-  D: [], 
-  E: ["F"], 
-  F: [] 
+// Usage example
+const graphBFS = {
+  A: ["B", "C"],
+  B: ["D", "E"],
+  C: ["F"],
+  D: [],
+  E: ["F"],
+  F: [],
 };
 
-console.log(bfs(graphBFS, "A")); 
-// Output: ["A", "B", "C", "D", "E", "F"] 
-``` 
+console.log(bfs(graphBFS, "A"));
+// Output: ["A", "B", "C", "D", "E", "F"]
+```
 
-#### DFS in TypeScript 
+#### DFS in TypeScript
 
-```typescript 
-function dfs(graph: { [key: string]: string[] }, start: string): string[] { 
+```typescript
+function dfs(graph: { [key: string]: string[] }, start: string): string[] {
   let visited: Set<string> = new Set();
   let stack: string[] = [start];
   let result: string[] = [];
 
-  while (stack.length > 0) { 
+  while (stack.length > 0) {
     let node = stack.pop()!;
-    if (!visited.has(node)) { 
+    if (!visited.has(node)) {
       visited.add(node);
       result.push(node);
       stack.push(...graph[node]);
-    } 
-  } 
-  
+    }
+  }
+
   return result;
 }
 
@@ -714,18 +916,20 @@ const graphDFS = {
   C: ["F"],
   D: [],
   E: ["F"],
-  F: []
+  F: [],
 };
 
 console.log(dfs(graphDFS, "A")); // Output: ["A", "C", "F", "B", "E", "D"]
 ```
 
 ### Summary
+
 - **BFS (Breadth-First Search):** Explores the maze layer by layer, checking all the surrounding rooms before going deeper.
 - **DFS (Depth-First Search):** Explores the maze going as deep as possible in one path before going back and trying another.
 
 In the example:
-- **BFS:** Starts at "A", then goes to "B" and "C", and continues exploring layer by layer. 
+
+- **BFS:** Starts at "A", then goes to "B" and "C", and continues exploring layer by layer.
 - **DFS:** Start at "A", go to "B", then "D", and continue exploring as deep as possible on each path before returning.
 
 ## **Big O Notation**
@@ -1055,8 +1259,8 @@ console.log(
 
 <img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/big-o-graphic.png">
 
-<img width="100%" alt="img"  src="https://raw.githubusercontent.com/AlexGalhardo/Software-Engineering/master/big-o-names.jpeg">
-
 <img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/big-o-cheat-sheet.png">
+
+<img width="100%" alt="img"  src="https://alexgalhardo.vercel.app/images/bio-o-array-sorting-algorithms.png">
 
 <br><br>
