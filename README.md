@@ -11,7 +11,6 @@
 - I wish I had a reference like this with hundreds of other useful study references when I started studying programming and technology back in 2016.
 - I really enjoy sharing knowledge and making these study notes, whether for personal or professional purposes, I hope they are useful for you too.
 
-
 ## PT-BR Introdução
 - Eu criei esse repositório enquanto estava na universidade, principalmente para salvar como backup, minhas anotações e estudos pessoais sobre engenharia de software.
 - Com o passar do tempo, muitas pessoas começaram a dar estrelinhas e fazer o fork desse repositório, principalmente brasileiros que estão começando os estudos na área. 
@@ -40,6 +39,7 @@
   - [Modern Operating Systems - Tanenbaum](https://www.amazon.com/Modern-Operating-Systems-Andrew-Tanenbaum-ebook/dp/B09ZHR7NRK)
   - [Sistemas Operacionais: Projeto e Implementação](https://www.amazon.com.br/Sistemas-Operacionais-Projeto-Implementa%C3%A7%C3%A3o-Portuguese/dp/8577800571)
   - [Compilers: Principles, Techniques, and Tools - Dragon Book](https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811)
+  - [dicasdecarreira.dev](https://dicasdecarreira.dev)
 - Blogs & Articles
   - [Rob Pike's 5 Rules of Programming](https://users.ece.utexas.edu/~adnan/pike.html)
   - [https://martinfowler.com/](https://martinfowler.com/)
@@ -48,6 +48,7 @@
   - [Teach Yourself Programming in Ten Years - Peter Norvig](http://norvig.com/21-days.html)
   - [No Silver Bullet - Essence and Accident in Software Engineering](https://alexgalhardo.vercel.app/pdfs/no-silver-bullet.pdf)
   - [The Future of the Web is on the Edge](https://deno.com/blog/the-future-of-web-is-on-the-edge)
+  - [https://eltonminetto.dev/](https://eltonminetto.dev/)
 - Github
   - [Coding Interview University](https://github.com/jwasham/coding-interview-university)
   - [Web Developer Roadmap](https://github.com/kamranahmedse/developer-roadmap)
